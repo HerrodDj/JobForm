@@ -54,6 +54,13 @@ public class changePassActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() { //TODO it's not working yet
+        Intent a = new Intent(this, MainActivity.class);
+        startActivity(a);
+        super.onBackPressed();
+    }
+
     private boolean validUser(String name, String pass) {
         boolean flag = false;
         for (User user : lista.getUsuarios()) {
@@ -63,5 +70,7 @@ public class changePassActivity extends AppCompatActivity {
         }
         return flag;
     }
+
+
 
 }

@@ -49,4 +49,11 @@ public class registerActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() { //TODO it's not working yet
+        Intent a = new Intent(this, MainActivity.class);
+        startActivity(a);
+        super.onBackPressed();
+    }
 }

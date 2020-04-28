@@ -3,21 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="#fff"
     android:orientation="vertical"
     android:stretchColumns="1">
 
     <TableRow android:padding="5dip">
 
         <TextView
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="20dp"
             android:layout_span="2"
             android:gravity="center_horizontal"
-            android:text="@string/loginForm"
-            android:textColor="#0ff"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:text="Welcome to Job Application"
+            android:layout_height="180dp"
+            android:fontFamily="cursive"
+            android:textColor="#71266E"
+            android:textSize="45dp"
+            />
     </TableRow>
 
     <TableRow>
@@ -27,7 +29,7 @@
             android:layout_column="0"
             android:layout_marginLeft="10dp"
             android:text="@string/userName"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp" />
 
         <EditText
@@ -49,7 +51,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:text="@string/password"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp" />
 
         <EditText
@@ -71,13 +73,13 @@
         <Button
             android:id="@+id/loginBtn"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginHorizontal="50dp"
             android:layout_span="2"
-            android:background="#0ff"
+            android:background="@drawable/button_btn"
             android:text="@string/login"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="16dp"
+            android:textColor="#fff"
+/>
 
     </TableRow>
 
@@ -93,9 +95,8 @@
             android:layout_gravity="center"
             android:layout_span="2"
             android:text="@string/ChangePass"
-            android:textColor="#0ff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
     </TableRow>
 
     <TableRow
@@ -110,9 +111,8 @@
             android:layout_gravity="center"
             android:layout_span="2"
             android:text="@string/Regis"
-            android:textColor="#0ff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
     </TableRow>
 
 
