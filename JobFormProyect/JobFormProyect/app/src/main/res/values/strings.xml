@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Job Application</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="loginForm">Login Form</string>
+    <string name="userName">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">LogIn</string>
+    <string name="ChangePass">Change Password</string>
+    <string name="Regis">Register</string>
+    <string name="OK">OK</string>
+    <string name="oldPass">Current Password</string>
+    <string name="newPass">New Password</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+
+
+    <string-array name="spinnerList">
+        <item>
+            "Job1"
+        </item>
+        <item>
+            "Job2"
+        </item>
+        <item>
+            "Job3"
+        </item>
+    </string-array>
+
+    <string-array name="countries">
+        <item>
+            Costa Rica
+        </item>
+        <item>
+            Japón
+        </item>
+        <item>
+            Alemania
+        </item>
+    </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_Job">JobForm</string>
+    <string name="menu_List">ListForm</string>
+    <string name="Logout">Logout</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="title_activity_list_job_form">ListJobFormActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>
