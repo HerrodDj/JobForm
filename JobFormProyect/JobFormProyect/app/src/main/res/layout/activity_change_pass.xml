@@ -1,126 +1,115 @@
 <TableLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
     android:stretchColumns="1">
-
     <TableRow android:padding="5dip">
-
         <TextView
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_span="2"
             android:gravity="center_horizontal"
-            android:text="@string/Regis"
-
+            android:text="@string/ChangePass"
             android:fontFamily="cursive"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#71266E"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
             android:textSize="30dp"
             android:textStyle="bold" />
     </TableRow>
 
-
     <TableRow>
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_marginLeft="10dp"
-            android:text="@string/userName"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp" />
-
         <EditText
             android:id="@+id/userName"
             android:layout_height="wrap_content"
-            android:layout_column="1"
             android:layout_marginLeft="10dp"
-            android:background="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:hint="@string/userName"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
             android:padding="5dp"
-            android:textColor="#000" />
+            android:textColor="#71266E" />
     </TableRow>
 
-    <TableRow   android:layout_marginTop="20dp">
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_marginLeft="10dp"
-            android:text="@string/oldPass"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp" />
-
+    <TableRow   >
         <EditText
             android:id="@+id/curPas"
             android:layout_height="wrap_content"
-            android:layout_column="1"
+            android:layout_width="wrap_content"
             android:layout_marginLeft="10dp"
-            android:background="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:hint="@string/oldPass"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
             android:padding="5dp"
             android:inputType="textPassword"
-            android:textColor="#000" />
+            android:textColor="#71266E" />
     </TableRow>
 
     <TableRow>
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/newPass"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp" />
-
         <EditText
             android:id="@+id/Newpassword"
+            android:layout_width="390dp"
             android:layout_height="wrap_content"
-            android:layout_column="1"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:background="#fff"
+            android:layout_marginBottom="20dp"
             android:hint="@string/newPass"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
+            android:inputType="textPassword"
             android:padding="5dp"
-            android:textColor="#000"
-            android:inputType="textPassword" />
+            android:textColor="#71266E" />
     </TableRow>
 
-
-    <TableRow android:layout_marginTop="20dp">
-
-        <Button
-            android:id="@+id/OkBtn"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_span="2"
-            android:background="@drawable/button_btn"
-            android:text="@string/OK"
-            android:textColor="#fff"
-            android:textSize="20sp" />
-
-    </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
-
-        <Button
-            android:id="@+id/canBtn"
-            android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <EditText
+            android:id="@+id/cpC"
+            android:layout_width="390dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_span="2"
-            android:background="@drawable/button_btn"
-            android:text="@string/cancel"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/CPass"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColor="#71266E" />
     </TableRow>
 
+    <TableRow
+        android:layout_width="242dp"
+        android:layout_marginTop="20dp">
+        <ImageButton
+            android:id="@+id/OKBtn"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@drawable/button_btn"
+            app:srcCompat="@drawable/ic_aceptar" />
+        <ImageButton
+            android:id="@+id/canBtn"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/button_btn"
+            app:srcCompat="@drawable/ic_cancelar" />
+    </TableRow>
 
 </TableLayout>

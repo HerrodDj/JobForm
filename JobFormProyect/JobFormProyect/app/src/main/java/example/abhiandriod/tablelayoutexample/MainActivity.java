@@ -1,11 +1,13 @@
 package example.abhiandriod.tablelayoutexample;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         lista = new Datos();
         // initiate a button
-        Button loginButton = (Button) findViewById(R.id.loginBtn);
+        ImageButton loginButton = (ImageButton) findViewById(R.id.loginBtn);
         final EditText name = (EditText) findViewById(R.id.userName);
         final EditText pass = (EditText) findViewById(R.id.password);
         final TextView changePassBtn = (TextView) findViewById(R.id.changPass);
         final TextView regisBtn = (TextView) findViewById(R.id.regis);
         // perform click event on the button
+
+        changePassBtn.setPaintFlags(changePassBtn.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
         check();
 

@@ -3,9 +3,11 @@ package example.abhiandriod.tablelayoutexample;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import Model.Datos;
@@ -13,6 +15,11 @@ import Model.User;
 
 public class changePassActivity extends AppCompatActivity {
     private Datos lista;
+    private EditText userN;
+    private EditText pass ;
+    private EditText Npass;
+    private EditText conPass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +27,12 @@ public class changePassActivity extends AppCompatActivity {
         setContentView(R.layout.activity_change_pass);
         lista = new Datos();
 
-        Button cnlBtn = (Button) findViewById(R.id.canBtn);
-        Button okBtn = (Button) findViewById(R.id.OkBtn);
-        final EditText userN = (EditText) findViewById(R.id.userName);
-        final EditText pass = (EditText) findViewById(R.id.curPas);
-        final EditText Npass = (EditText) findViewById(R.id.Newpassword);
+        ImageButton cnlBtn = (ImageButton) findViewById(R.id.canBtn);
+        ImageButton okBtn = (ImageButton) findViewById(R.id.OKBtn);
+        userN = (EditText) findViewById(R.id.userName);
+        pass = (EditText) findViewById(R.id.curPas);
+        Npass = (EditText) findViewById(R.id.Newpassword);
+        conPass = (EditText) findViewById(R.id.cpC);
 
         cnlBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,16 +47,18 @@ public class changePassActivity extends AppCompatActivity {
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = userN.getText().toString();
-                String password = pass.getText().toString();
-                String Npassword = Npass.getText().toString();
-                if(validUser(nombre,password) && Npass!=null){
-                    Toast.makeText(getApplicationContext(), "Contraseña Modificada", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(changePassActivity.this, MainActivity.class);
-                    User nU = new User(nombre,Npassword,2);
-                    intent.putExtra("ChangePass", nU);
-                    startActivity(intent);
-                    finish(); //prevent go back
+                if (validateForm()){
+                    String nombre = userN.getText().toString();
+                    String password = pass.getText().toString();
+                    String Npassword = Npass.getText().toString();
+                    if (validUser(nombre, password) && Npass != null) {
+                        Toast.makeText(getApplicationContext(), "Password Changed", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(changePassActivity.this, MainActivity.class);
+                        User nU = new User(nombre, Npassword, 2);
+                        intent.putExtra("ChangePass", nU);
+                        startActivity(intent);
+                        finish(); //prevent go back
+                    }
                 }
             }
         });
@@ -68,9 +78,37 @@ public class changePassActivity extends AppCompatActivity {
                 flag = true;
             }
         }
+        if(flag==false){
+            Toast.makeText(getApplicationContext(), "User doesnt exist", Toast.LENGTH_LONG).show();
+        }
         return flag;
     }
 
+
+    public boolean validateForm() {
+        int error = 0;
+        if (TextUtils.isEmpty(this.userN.getText())) {
+            userN.setError("User Required");
+            error++;
+        }
+        if (TextUtils.isEmpty(this.pass.getText())) {
+            pass.setError("Old password Required");
+            error++;
+        }
+        if (!Npass.getText().toString().equals(conPass.getText().toString())) {
+            conPass.setError("Both passwords must be the same");
+            error++;
+        }
+        if (TextUtils.isEmpty(this.Npass.getText())) {
+            Npass.setError("Confirm Password");
+            error++;
+        }
+        if (error > 0) {
+            Toast.makeText(getApplicationContext(), "Complete all Fields", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+    }
 
 
 }

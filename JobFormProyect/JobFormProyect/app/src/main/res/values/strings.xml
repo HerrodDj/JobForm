@@ -11,9 +11,11 @@
     <string name="OK">OK</string>
     <string name="oldPass">Current Password</string>
     <string name="newPass">New Password</string>
+    <string name="CPass">Confirm Password</string>
     <string name="cancel">Cancel</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="PrincipalMessage">Welcome to Job Application</string>
 
 
     <string-array name="spinnerList">

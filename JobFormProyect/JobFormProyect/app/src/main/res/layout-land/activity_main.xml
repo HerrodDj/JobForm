@@ -1,23 +1,26 @@
-<TableLayout
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    >
+<TableLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#fff"
     android:orientation="vertical"
     android:stretchColumns="1">
 
     <TableRow >
+
         <TextView
+            android:layout_height="93dp"
             android:layout_marginBottom="20dp"
             android:layout_span="2"
+            android:fontFamily="cursive"
             android:gravity="center"
             android:text="@string/PrincipalMessage"
-            android:layout_height="110dp"
-            android:fontFamily="cursive"
             android:textColor="#71266E"
-            android:textSize="45dp"
-            />
+            android:textSize="45dp" />
     </TableRow>
 
     <TableRow>
@@ -28,8 +31,8 @@
             android:layout_column="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/userName"
             android:backgroundTint="#71266E"
             android:textColorHint="#71266E"
@@ -46,8 +49,8 @@
             android:layout_column="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/password"
             android:backgroundTint="#71266E"
             android:textColorHint="#71266E"
@@ -107,3 +110,4 @@
 
 
 </TableLayout>
+</ScrollView>
