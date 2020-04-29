@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 String nombre = name.getText().toString();
                 String password = pass.getText().toString();
                 if(validUser(nombre,password)){
+                    int rol = getRol(nombre,password);
                     Toast.makeText(getApplicationContext(), "Autentificado", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(MainActivity.this, Home.class);
+                    intent.putExtra("rol", rol);
                     MainActivity.this.startActivity(intent);
                     finish();
                 }else{
@@ -109,6 +111,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return flag;
+    }
+
+    private int getRol(String n, String p){
+        int r =0;
+        for (User user : lista.getUsuarios()) {
+            if (user.getUserName().equals(n)) {
+                r = user.getRol();
+                break;
+            }
+        }
+        return r;
     }
 
 

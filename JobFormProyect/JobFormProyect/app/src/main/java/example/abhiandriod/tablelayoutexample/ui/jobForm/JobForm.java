@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import java.util.Calendar;
@@ -36,8 +37,8 @@ public class JobForm extends AppCompatActivity {
         final EditText area = (EditText) findViewById(R.id.area);
         final EditText telefono = (EditText) findViewById(R.id.telefono);
         final Spinner trabajo = (Spinner) findViewById(R.id.spinner2);
-        final Button resume = (Button) findViewById(R.id.buttonFile);
-        final Button btnSub = (Button) findViewById(R.id.button2);
+        final ImageButton resume = (ImageButton) findViewById(R.id.resuBtn);
+        final ImageButton btnSub = (ImageButton) findViewById(R.id.confirmB);
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
