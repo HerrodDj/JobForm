@@ -1,5 +1,6 @@
 package example.abhiandriod.tablelayoutexample.ui.home;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -28,6 +29,7 @@ import example.abhiandriod.tablelayoutexample.ui.listForms.ListJobFormActivity;
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private AppBarConfiguration mAppBarConfiguration;
+    static int rolNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null) {
+            rolNum = (int) getIntent().getSerializableExtra("rol");
+        }
+
+        checkRol(rolNum);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +65,19 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void checkRol(int r) {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu menu = navigationView.getMenu();
+        MenuItem holder;
+        if(r!=0 && r!=1){
+            holder = menu.findItem(R.id.nav_lisJobs);
+            holder.setEnabled(false);
+        }else{
+            holder = menu.findItem(R.id.nav_JobForm);
+            holder.setEnabled(false);
+        }
     }
 
     @Override
@@ -109,6 +132,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         finish();
         Toast.makeText(getApplicationContext(), "Log Out", Toast.LENGTH_SHORT).show();
         Intent a = new Intent(this, MainActivity.class);
+        rolNum=0;
         startActivity(a);
     }
 

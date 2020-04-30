@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     >
 <TableLayout
     android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:layout_marginRight="5dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
@@ -31,9 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
                 >
-
                 <TextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
@@ -48,8 +47,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginTop="3dp"
-                    android:text="Please complete the form below to apply for a position with us"
-                    android:textSize="10sp"
+                    android:text="@string/SecondMessage"
+                    android:textSize="20sp"
 
                     android:textColor="#71266E"/>
             </LinearLayout>
@@ -81,6 +80,7 @@
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
 
                 <EditText
@@ -134,6 +134,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -228,14 +229,14 @@
 
                 <TextView
                     android:id="@+id/textView18"
-                    android:layout_width="53dp"
+                    android:layout_width="143dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
                     android:text="Email Address *" />
 
                 <EditText
                     android:id="@+id/email"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -269,6 +270,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
 
                 <EditText
@@ -313,15 +315,16 @@
 
             <TextView
                 android:id="@+id/textView28"
-                android:layout_width="286dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Applying for Position *" />
 
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:entries="@array/spinnerList"
                 />
@@ -341,9 +344,9 @@
 
             <TextView
                 android:id="@+id/textView29"
-                android:layout_width="wrap_content"
+                android:layout_width="148dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Start Date" />
 
             <EditText
@@ -376,7 +379,7 @@
                 android:layout_width="wrap_content" />
 
             <ImageButton
-                android:id="@+id/resuBtn"
+                android:id="@+id/imageButton"
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -401,7 +404,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/confirmB"
+                android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="65dp"
                 android:layout_weight="1"

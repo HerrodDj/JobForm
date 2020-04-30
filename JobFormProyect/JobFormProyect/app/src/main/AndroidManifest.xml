@@ -10,11 +10,13 @@
         <activity
             android:name=".ui.listForms.ListJobFormActivity"
             android:label="@string/title_activity_list_job_form"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".ui.home.Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".registerActivity" />
         <activity android:name=".changePassActivity" />
         <activity android:name=".ui.jobForm.JobForm" />

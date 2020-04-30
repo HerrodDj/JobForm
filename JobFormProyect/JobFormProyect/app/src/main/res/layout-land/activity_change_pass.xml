@@ -1,86 +1,102 @@
-<TableLayout
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    >
+<TableLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="#fff"
     android:orientation="vertical"
     android:stretchColumns="1">
-
     <TableRow >
-
         <TextView
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_span="2"
             android:gravity="center_horizontal"
-            android:text="@string/Regis"
+            android:text="@string/ChangePass"
             android:fontFamily="cursive"
             android:textColor="#71266E"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
             android:textSize="30dp"
             android:textStyle="bold" />
     </TableRow>
-
+    
     <TableRow>
+
         <EditText
             android:id="@+id/userName"
+            android:layout_width="711dp"
             android:layout_height="wrap_content"
-            android:layout_column="1"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#71266E"
             android:hint="@string/userName"
+            android:padding="5dp"
+            android:textColor="#71266E"
+            android:textColorHint="#71266E" />
+    </TableRow>
+
+    <TableRow  >
+        <EditText
+            android:id="@+id/curPas"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/oldPass"
             android:backgroundTint="#71266E"
             android:textColorHint="#71266E"
             android:padding="5dp"
-            android:ems="10"
-            android:textColor="#71266E"
-            android:inputType="text"
-            />
+            android:inputType="textPassword"
+            android:textColor="#71266E" />
     </TableRow>
 
     <TableRow>
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/Newpassword"
+            android:layout_width="390dp"
             android:layout_height="wrap_content"
-            android:layout_column="1"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/password"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/newPass"
             android:backgroundTint="#71266E"
             android:textColorHint="#71266E"
+            android:inputType="textPassword"
             android:padding="5dp"
-            android:ems="10"
-            android:textColor="#71266E"
-            android:inputType="textPassword" />
-    </TableRow>
-
-    <TableRow>
-        <EditText
-            android:id="@+id/passwordC"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/CPass"
-            android:backgroundTint="#71266E"
-            android:textColorHint="#71266E"
-            android:padding="5dp"
-            android:textColor="#71266E"
-            android:inputType="textPassword" />
+            android:textColor="#71266E" />
     </TableRow>
 
 
     <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <EditText
+            android:id="@+id/cpC"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/CPass"
+            android:backgroundTint="#71266E"
+            android:textColorHint="#71266E"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColor="#71266E" />
+    </TableRow>
+
+    <TableRow
         android:layout_width="242dp"
-        android:layout_marginTop="20dp"
-        >
+        android:layout_marginTop="20dp">
         <ImageButton
             android:id="@+id/OKBtn"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
@@ -88,11 +104,10 @@
             android:layout_gravity="center"
             android:background="@drawable/button_btn"
             app:srcCompat="@drawable/ic_aceptar" />
-
         <ImageButton
             android:id="@+id/canBtn"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="5dp"
             android:layout_column="0"
@@ -101,6 +116,6 @@
             android:background="@drawable/button_btn"
             app:srcCompat="@drawable/ic_cancelar" />
     </TableRow>
-
-
+    
 </TableLayout>
+</ScrollView>
