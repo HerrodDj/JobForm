@@ -75,6 +75,7 @@
                 android:layout_width="118dp"
                 android:layout_height="wrap_content"
                 android:text="Full Name *"
+                android:textColor="#71266E"
                 android:textSize="18sp" />
 
             <LinearLayout
@@ -89,6 +90,9 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="First name"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -103,6 +107,9 @@
                     android:id="@+id/apellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Last Name"
                     android:inputType="textPersonName" />
@@ -128,6 +135,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="235dp"
                 android:layout_height="wrap_content"
+                android:textColor="#71266E"
                 android:layout_weight="1"
                 android:text="Current Address *" />
 
@@ -141,6 +149,9 @@
                     android:id="@+id/calle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Street Addres"
                     android:inputType="textPersonName"
@@ -150,6 +161,9 @@
                     android:id="@+id/calle2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Street Addres Line 2"
                     android:inputType="textPersonName"
@@ -169,6 +183,9 @@
                             android:id="@+id/ciudad"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColorHint="#71266E"
+                            android:textColor="#71266E"
+                            android:backgroundTint="#71266E"
                             android:ems="10"
                             android:hint="City"
                             android:inputType="textPersonName" />
@@ -177,6 +194,9 @@
                             android:id="@+id/zip"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColorHint="#71266E"
+                            android:textColor="#71266E"
+                            android:backgroundTint="#71266E"
                             android:ems="10"
                             android:hint="Postal/ZipCode"
                             android:inputType="textPersonName" />
@@ -192,6 +212,9 @@
                             android:id="@+id/estado"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColorHint="#71266E"
+                            android:textColor="#71266E"
+                            android:backgroundTint="#71266E"
                             android:ems="10"
                             android:hint="State/Province"
                             android:inputType="textPersonName"
@@ -201,7 +224,8 @@
                             android:id="@+id/spinner"
                             android:layout_width="match_parent"
                             android:layout_height="44dp"
-                            android:entries="@array/countries" />
+                            android:isScrollContainer="true"
+                            />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -230,6 +254,7 @@
                     android:id="@+id/textView18"
                     android:layout_width="53dp"
                     android:layout_height="wrap_content"
+                    android:textColor="#71266E"
                     android:layout_weight="1"
                     android:text="Email Address *" />
 
@@ -237,6 +262,9 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
@@ -263,6 +291,7 @@
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:textColor="#71266E"
                 android:text="Phone Number *" />
 
             <LinearLayout
@@ -275,6 +304,9 @@
                     android:id="@+id/area"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Area Code"
                     android:inputType="textPersonName" />
@@ -291,6 +323,9 @@
                     android:id="@+id/telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#71266E"
+                    android:textColor="#71266E"
+                    android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Phone Number"
                     android:inputType="textPersonName" />
@@ -313,18 +348,18 @@
 
             <TextView
                 android:id="@+id/textView28"
-                android:layout_width="286dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:textColor="#71266E"
+                android:layout_weight="0"
                 android:text="Applying for Position *" />
 
             <Spinner
                 android:id="@+id/spinner2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:entries="@array/spinnerList"
-                />
+                android:isScrollContainer="true" />
         </LinearLayout>
     </TableRow>
 
@@ -343,6 +378,7 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#71266E"
                 android:layout_weight="1"
                 android:text="Start Date" />
 
@@ -351,6 +387,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColorHint="#71266E"
+                android:textColor="#71266E"
+                android:backgroundTint="#71266E"
                 android:ems="10"
                 android:focusable = "false"
                 android:text="Select Date" />
@@ -372,6 +411,7 @@
                 android:id="@+id/textView33"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
+                android:textColor="#71266E"
                 android:text="Upload Resume *"
                 android:layout_width="wrap_content" />
 

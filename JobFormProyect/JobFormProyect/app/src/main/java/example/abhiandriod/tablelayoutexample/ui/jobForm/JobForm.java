@@ -2,9 +2,12 @@ package example.abhiandriod.tablelayoutexample.ui.jobForm;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -12,17 +15,23 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import java.util.Calendar;
+import java.util.List;
 
 import example.abhiandriod.tablelayoutexample.ui.home.Home;
 import example.abhiandriod.tablelayoutexample.R;
 
 public class JobForm extends AppCompatActivity {
     private DatePickerDialog date;
+    private Spinner countries;
+    private Spinner jobs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_form);
+
+
+
 
         final EditText fecha = (EditText) findViewById(R.id.fecha);
         final EditText nombre = (EditText) findViewById(R.id.nombre);
@@ -58,6 +67,16 @@ public class JobForm extends AppCompatActivity {
                 date.show();
             }
         });
+
+
+        ArrayAdapter<CharSequence> adap = ArrayAdapter.createFromResource(this,R.array.countries, R.layout.spinner_item);
+        adap.setDropDownViewResource(R.layout.list_spinner);
+        paises.setAdapter(adap);
+
+        ArrayAdapter<CharSequence> adap1 = ArrayAdapter.createFromResource(this,R.array.JobList, R.layout.spinner_item);
+        adap1.setDropDownViewResource(R.layout.list_spinner);
+        trabajo.setAdapter(adap1);
+
     }
 
 
