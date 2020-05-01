@@ -5,7 +5,7 @@ import android.media.Image;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Formulario implements Serializable {
+public class Form implements Serializable {
 
     private String name;
     private String lastName;
@@ -22,7 +22,7 @@ public class Formulario implements Serializable {
     private Date date;
     private Image resume;
 
-    public Formulario(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, Date date, Image resume) {
+    public Form(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, Date date, Image resume) {
         this.name = name;
         this.lastName = lastName;
         this.streetAdrees = streetAdrees;
@@ -39,7 +39,7 @@ public class Formulario implements Serializable {
         this.resume = resume;
     }
 
-    public Formulario(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, Date date) {
+    public Form(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, Date date) {
         this.name = name;
         this.lastName = lastName;
         this.streetAdrees = streetAdrees;
@@ -56,7 +56,7 @@ public class Formulario implements Serializable {
         this.resume=null;
     }
 
-    public Formulario() {
+    public Form() {
         this(null,null,null,null,null,null,null,null,null,null,null,null,null);
     }
 
@@ -174,7 +174,7 @@ public class Formulario implements Serializable {
 
     @Override
     public String toString() {
-        return "Formulario{" +
+        return "Form{" +
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", streetAdrees='" + streetAdrees + '\'' +

@@ -7,7 +7,7 @@
 <TableLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.jobForm.JobForm">
+    tools:context=".ui.jobForm.JobFormActivity">
 
     <TableRow
         android:layout_width="match_parent"
@@ -199,7 +199,7 @@
                             android:backgroundTint="#71266E"
                             android:ems="10"
                             android:hint="Postal/ZipCode"
-                            android:inputType="textPersonName" />
+                            android:inputType="number" />
 
                     </LinearLayout>
 
@@ -267,7 +267,7 @@
                     android:backgroundTint="#71266E"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textEmailAddress"
                     android:hint="ex: name@mail.com"/>
             </LinearLayout>
         </LinearLayout>
@@ -309,7 +309,7 @@
                     android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Area Code"
-                    android:inputType="textPersonName" />
+                    android:inputType="number" />
 
             </LinearLayout>
 
@@ -328,7 +328,7 @@
                     android:backgroundTint="#71266E"
                     android:ems="10"
                     android:hint="Phone Number"
-                    android:inputType="textPersonName" />
+                    android:inputType="number" />
 
             </LinearLayout>
         </LinearLayout>
@@ -420,7 +420,7 @@
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="30dp"
                 android:background="@drawable/button_btn"
                 app:srcCompat="@drawable/ic_formi" />
 

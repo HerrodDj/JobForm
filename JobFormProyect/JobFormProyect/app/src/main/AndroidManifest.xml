@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".registerActivity" />
         <activity android:name=".changePassActivity" />
-        <activity android:name=".ui.jobForm.JobForm"
+        <activity android:name=".ui.jobForm.JobFormActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MainActivity"
