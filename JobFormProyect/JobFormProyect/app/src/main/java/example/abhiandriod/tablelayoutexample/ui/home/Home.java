@@ -1,6 +1,5 @@
 package example.abhiandriod.tablelayoutexample.ui.home;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -23,7 +22,7 @@ import android.widget.Toast;
 
 import example.abhiandriod.tablelayoutexample.MainActivity;
 import example.abhiandriod.tablelayoutexample.R;
-import example.abhiandriod.tablelayoutexample.ui.jobForm.JobForm;
+import example.abhiandriod.tablelayoutexample.ui.jobForm.JobFormActivity;
 import example.abhiandriod.tablelayoutexample.ui.listForms.ListJobFormActivity;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -138,7 +137,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     public void JobForm(){
         finish();
-        Intent a = new Intent(this, JobForm.class);
+        Intent a = new Intent(this, JobFormActivity.class);
         startActivity(a);
     }
 
