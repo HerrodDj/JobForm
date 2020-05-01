@@ -19,27 +19,39 @@
     <string name="SecondMessage">Please complete the form below to apply for a position with us</string>
 
 
-    <string-array name="spinnerList">
+    <string-array name="JobList">
         <item>
-            "Job1"
+            "Developer"
         </item>
         <item>
-            "Job2"
+            "Administrator"
         </item>
         <item>
-            "Job3"
+            "Scrum Master"
+        </item>
+        <item>
+            "Human Resources"
+        </item>
+        <item>
+            "Janitor"
         </item>
     </string-array>
 
     <string-array name="countries">
         <item>
-            Costa Rica
+            "Costa Rica"
         </item>
         <item>
-            Japón
+            "Japan"
         </item>
         <item>
-            Alemania
+            "Germany"
+        </item>
+        <item>
+            "Russia"
+        </item>
+        <item>
+           "Spain"
         </item>
     </string-array>
     <string name="title_activity_home">HomeActivity</string>
