@@ -2,6 +2,8 @@ package example.abhiandriod.tablelayoutexample.ui.jobForm;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,7 @@ public class JobForm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_form);
+
 
         final EditText fecha = (EditText) findViewById(R.id.fecha);
         final EditText nombre = (EditText) findViewById(R.id.nombre);
