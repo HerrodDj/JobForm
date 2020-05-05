@@ -19,10 +19,10 @@ public class Form implements Serializable {
     private String areaCode;
     private String phoneNumber;
     private String applyingJob;
-    private Date date;
+    private String date;
     private Image resume;
 
-    public Form(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, Date date, Image resume) {
+    public Form(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, String date, Image resume) {
         this.name = name;
         this.lastName = lastName;
         this.streetAdrees = streetAdrees;
@@ -39,7 +39,7 @@ public class Form implements Serializable {
         this.resume = resume;
     }
 
-    public Form(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, Date date) {
+    public Form(String name, String lastName, String streetAdrees, String streetAdrees2, String ciudad, String state, String zipCode, String country, String email, String areaCode, String phoneNumber, String applyingJob, String date) {
         this.name = name;
         this.lastName = lastName;
         this.streetAdrees = streetAdrees;
@@ -156,11 +156,11 @@ public class Form implements Serializable {
         this.applyingJob = applyingJob;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

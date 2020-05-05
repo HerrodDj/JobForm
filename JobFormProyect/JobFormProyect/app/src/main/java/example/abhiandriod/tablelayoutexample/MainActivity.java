@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+
 import Model.Datos;
 import Model.User;
 import example.abhiandriod.tablelayoutexample.ui.home.Home;
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         lista = new Datos();
+
         // initiate a button
         ImageButton loginButton = (ImageButton) findViewById(R.id.loginBtn);
         final EditText name = (EditText) findViewById(R.id.userName);
