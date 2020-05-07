@@ -12,13 +12,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.ParseException;
+import java.util.List;
 
 import Model.Datos;
+import Model.Form;
 import Model.User;
 import example.abhiandriod.tablelayoutexample.ui.home.Home;
 
 public class MainActivity extends AppCompatActivity {
     private Datos lista;
+    public static List<Form> l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

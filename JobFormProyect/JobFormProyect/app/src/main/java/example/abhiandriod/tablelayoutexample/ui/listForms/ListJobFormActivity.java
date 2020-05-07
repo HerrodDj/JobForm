@@ -11,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class ListJobFormActivity extends AppCompatActivity implements ListJobFor
     private RecyclerView mRecyclerView;
     private ListJobFormAdapter mAdapter;
     private List<Form> JobsList;
-    private Datos datos;
+    private static Datos datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,15 @@ public class ListJobFormActivity extends AppCompatActivity implements ListJobFor
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mRecyclerView.setAdapter(mAdapter);
+
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Form aux = (Form) getIntent().getSerializableExtra("FormN");
+            JobsList.add(aux);
+            Toast.makeText(this, "Job Form Confirmed", Toast.LENGTH_SHORT).show();
+        }
+
 
         mAdapter.notifyDataSetChanged();
 

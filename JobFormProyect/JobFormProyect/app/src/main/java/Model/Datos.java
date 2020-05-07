@@ -57,4 +57,8 @@ public class Datos implements Serializable {
     public void setForms(List<Form> forms) {
         this.forms = forms;
     }
+
+    public void add(Form f){
+        this.forms.add(f);
+    }
 }
