@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.text.ParseException;
+
 import Model.Datos;
 import Model.User;
 
@@ -25,7 +27,9 @@ public class changePassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pass);
+
         lista = new Datos();
+
 
         ImageButton cnlBtn = (ImageButton) findViewById(R.id.canBtn);
         ImageButton okBtn = (ImageButton) findViewById(R.id.OKBtn);

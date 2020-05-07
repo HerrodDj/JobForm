@@ -5,13 +5,27 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.Datos;
+import Model.Form;
 import example.abhiandriod.tablelayoutexample.ui.home.Home;
 import example.abhiandriod.tablelayoutexample.R;
 
-public class ListJobFormActivity extends AppCompatActivity {
+public class ListJobFormActivity extends AppCompatActivity implements ListJobFormAdapter.JobFormAdapterListener{
+    private RecyclerView mRecyclerView;
+    private ListJobFormAdapter mAdapter;
+    private List<Form> JobsList;
+    private Datos datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +33,22 @@ public class ListJobFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_job_form);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mRecyclerView = findViewById(R.id.recyclerView);
+        JobsList = new ArrayList<>();
+        datos= new Datos();
+        JobsList=datos.getForms();
+
+        mAdapter = new ListJobFormAdapter(JobsList, this);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.notifyDataSetChanged();
+
     }
 
 
@@ -29,4 +59,8 @@ public class ListJobFormActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
+    @Override
+    public void onContactSelected(Form form) {
+
+    }
 }
