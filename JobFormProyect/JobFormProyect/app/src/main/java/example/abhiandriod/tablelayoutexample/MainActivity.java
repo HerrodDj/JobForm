@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.ParseException;
+
 import java.util.List;
 
 import Model.Datos;
@@ -21,7 +21,6 @@ import example.abhiandriod.tablelayoutexample.ui.home.Home;
 
 public class MainActivity extends AppCompatActivity {
     private Datos lista;
-    public static List<Form> l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
