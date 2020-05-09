@@ -27,7 +27,7 @@ import example.abhiandriod.tablelayoutexample.R;
 import example.abhiandriod.tablelayoutexample.ui.listForms.ListJobFormActivity;
 import example.abhiandriod.tablelayoutexample.ui.listForms.ListJobFormAdapter;
 
-public class JobFormActivity extends AppCompatActivity implements View.OnClickListener{
+public class JobFormActivity extends AppCompatActivity {
     private DatePickerDialog date;
     private EditText fecha ;
     private EditText nombre ;
@@ -44,16 +44,16 @@ public class JobFormActivity extends AppCompatActivity implements View.OnClickLi
     private Spinner trabajo ;
     private ImageButton resume ;
     private ImageButton btnSub ;
-    private static Datos gft;
+    private boolean editable = false;
+    static int rolNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_form);
+        editable = false;
 
 
-
-        gft=new Datos();
         fecha = (EditText) findViewById(R.id.fecha);
         nombre = (EditText) findViewById(R.id.nombre);
         apellido = (EditText) findViewById(R.id.apellido);
@@ -70,25 +70,10 @@ public class JobFormActivity extends AppCompatActivity implements View.OnClickLi
         trabajo=(Spinner) findViewById(R.id.spinner2);
         btnSub = (ImageButton) findViewById(R.id.confirmB);
 
-        fecha.setOnClickListener(this);
-        btnSub.setOnClickListener(this);
-        resume.setOnClickListener(this);
 
-        ArrayAdapter<CharSequence> adap = ArrayAdapter.createFromResource(this,R.array.countries, R.layout.spinner_item);
-        adap.setDropDownViewResource(R.layout.list_spinner);
-        paises.setAdapter(adap);
-
-        ArrayAdapter<CharSequence> adap1 = ArrayAdapter.createFromResource(this,R.array.JobList, R.layout.spinner_item);
-        adap1.setDropDownViewResource(R.layout.list_spinner);
-        trabajo.setAdapter(adap1);
-
-    }
-
-
-    @Override
-    public void onClick(@NonNull View v) {
-        switch (v.getId()){
-            case R.id.fecha:
+        fecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 final Calendar c = Calendar.getInstance();
                 int mYear = c.get(Calendar.YEAR);
                 int mMonth = c.get(Calendar.MONTH);
@@ -102,27 +87,88 @@ public class JobFormActivity extends AppCompatActivity implements View.OnClickLi
                             }
                         }, mYear, mMonth, mDay);
                 date.show();
-                break;
-            case R.id.confirmB:
-                if(validateForm()){
-                    Form nF = new Form(nombre.getText().toString(),apellido.getText().toString(),calle1.getText().toString(),calle2.getText().toString(),ciudad.getText().toString(),
-                    estado.getText().toString(),zip.getText().toString(),paises.getSelectedItem().toString(),email.getText().toString(),area.getText().toString(),
-                            telefono.getText().toString(),trabajo.getSelectedItem().toString(),date.getContext().toString());
-                    gft.add(nF);
-                    Intent intent = new Intent(this, ListJobFormActivity.class);
-                    intent.putExtra("FormN", nF);
-                    startActivity(intent);
+            }
+        });
+        String[] tab_c = getResources().getStringArray(R.array.countries);
+        String[] tab_j = getResources().getStringArray(R.array.JobList);
+
+
+        ArrayAdapter<CharSequence> adap = ArrayAdapter.createFromResource(this,R.array.countries, R.layout.spinner_item);
+        adap.setDropDownViewResource(R.layout.list_spinner);
+        paises.setAdapter(adap);
+
+        ArrayAdapter<CharSequence> adap1 = ArrayAdapter.createFromResource(this,R.array.JobList, R.layout.spinner_item);
+        adap1.setDropDownViewResource(R.layout.list_spinner);
+        trabajo.setAdapter(adap1);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            editable = extras.getBoolean("editable");
+            if (editable) {   // is editing some row
+                Form aux = (Form) getIntent().getSerializableExtra("form");
+                fecha.setText(aux.getDate());
+                nombre.setText(aux.getName());
+                nombre.setEnabled(false);
+                apellido.setText(aux.getLastName());
+                calle1.setText(aux.getStreetAdrees());
+                calle2.setText(aux.getStreetAdrees2());
+                ciudad.setText(aux.getCiudad());
+                estado.setText(aux.getState());
+                zip.setText(aux.getZipCode());
+                email.setText(aux.getEmail());
+                area.setText(aux.getAreaCode());
+                telefono.setText(aux.getPhoneNumber());
+                for(int i=0; i<tab_c.length;i++) {
+                    if (aux.getCountry().equals(tab_c[i])) {
+                        paises.setSelection(i);
+                        break;
+                    }
                 }
-                break;
+                for(int i=0; i<tab_j.length;i++) {
+                    if (aux.getApplyingJob().equals(tab_j[i])) {
+                        trabajo.setSelection(i);
+                        break;
+                    }
+                }
             }
         }
+        btnSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(editable){
+                    editJobF();
+                }else{
+                    addJobF();
+                }
+            }
+        });
+    }
 
+    private void addJobF() {
+        if(validateForm()){
+            Form nF = new Form(nombre.getText().toString(),apellido.getText().toString(),calle1.getText().toString(),calle2.getText().toString(),ciudad.getText().toString(),
+                    estado.getText().toString(),zip.getText().toString(),paises.getSelectedItem().toString(),email.getText().toString(),area.getText().toString(),
+                    telefono.getText().toString(),trabajo.getSelectedItem().toString(),fecha.getText().toString());
+            Intent intent = new Intent(getBaseContext(), ListJobFormActivity.class);
+            intent.putExtra("FormN", nF);
+            startActivity(intent);
+        }
+    }
 
-
-
+    private void editJobF() {
+        if(validateForm()){
+            Form nF = new Form(nombre.getText().toString(),apellido.getText().toString(),calle1.getText().toString(),calle2.getText().toString(),ciudad.getText().toString(),
+                    estado.getText().toString(),zip.getText().toString(),paises.getSelectedItem().toString(),email.getText().toString(),area.getText().toString(),
+                    telefono.getText().toString(),trabajo.getSelectedItem().toString(),fecha.getText().toString());
+            Intent intent = new Intent(getBaseContext(), ListJobFormActivity.class);
+            intent.putExtra("FormNE", nF);
+            startActivity(intent);
+        }
+    }
 
     @Override
     public void onBackPressed() { //TODO it's not working yet
+
         Intent a = new Intent(this, Home.class);
         startActivity(a);
         super.onBackPressed();
