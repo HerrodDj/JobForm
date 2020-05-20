@@ -21,6 +21,7 @@ import java.util.List;
 
 import Model.Datos;
 import Model.Form;
+import Model.SingletonFormList;
 import example.abhiandriod.tablelayoutexample.MainActivity;
 import example.abhiandriod.tablelayoutexample.ui.home.Home;
 import example.abhiandriod.tablelayoutexample.R;
@@ -52,6 +53,7 @@ public class JobFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_form);
         editable = false;
+
 
 
         fecha = (EditText) findViewById(R.id.fecha);
@@ -149,9 +151,10 @@ public class JobFormActivity extends AppCompatActivity {
             Form nF = new Form(nombre.getText().toString(),apellido.getText().toString(),calle1.getText().toString(),calle2.getText().toString(),ciudad.getText().toString(),
                     estado.getText().toString(),zip.getText().toString(),paises.getSelectedItem().toString(),email.getText().toString(),area.getText().toString(),
                     telefono.getText().toString(),trabajo.getSelectedItem().toString(),fecha.getText().toString());
-            Intent intent = new Intent(getBaseContext(), ListJobFormActivity.class);
-            intent.putExtra("FormN", nF);
+            SingletonFormList.getInstance().addToArray(nF);
+            Intent intent = new Intent(getBaseContext(), Home.class);
             startActivity(intent);
+            Toast.makeText(getApplicationContext(), "Form Submited", Toast.LENGTH_LONG).show();
         }
     }
 

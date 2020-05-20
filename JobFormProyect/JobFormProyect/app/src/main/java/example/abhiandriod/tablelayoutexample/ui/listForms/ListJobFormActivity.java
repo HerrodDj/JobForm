@@ -27,6 +27,7 @@ import java.util.List;
 
 import Model.Datos;
 import Model.Form;
+import Model.SingletonFormList;
 import example.abhiandriod.tablelayoutexample.ui.home.Home;
 import example.abhiandriod.tablelayoutexample.R;
 import example.abhiandriod.tablelayoutexample.ui.jobForm.JobFormActivity;
@@ -38,6 +39,7 @@ public class ListJobFormActivity extends AppCompatActivity implements ListJobFor
     private static Datos datos;
     private CoordinatorLayout coordinatorLayout;
     private SearchView searchView;
+    private static int ft=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +47,18 @@ public class ListJobFormActivity extends AppCompatActivity implements ListJobFor
         setContentView(R.layout.activity_list_job_form);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        coordinatorLayout=findViewById(R.id.coordinator_layout);
+        coordinatorLayout = findViewById(R.id.coordinator_layout);
 
         mRecyclerView = findViewById(R.id.recyclerView);
         JobsList = new ArrayList<>();
-        datos= new Datos();
-        JobsList=datos.getForms();
+        datos = new Datos();
+        if (ft==1){
+            for (int i = 0; i < datos.getForms().size(); i++) {
+                SingletonFormList.getInstance().addToArray(datos.getForms().get(i));
+            }
+            ft++;
+        }
+        JobsList.addAll(SingletonFormList.getInstance().getArray());
 
         mAdapter = new ListJobFormAdapter(JobsList, this);
 
@@ -99,8 +107,7 @@ public class ListJobFormActivity extends AppCompatActivity implements ListJobFor
                     }
                 }
             } else {
-                //found a new Curso Object
-                JobsList.add(aux);
+                JobsList=SingletonFormList.getInstance().getArray();
                 Toast.makeText(getApplicationContext(), aux.getName()+" "+aux.getLastName() + " successfully added", Toast.LENGTH_LONG).show();
             }
         }
