@@ -32,13 +32,13 @@ public class Datos implements Serializable {
 
     private void iniciarJ() {
         Form f = new Form("Diego","Monterrey","San Pablo","Quintana",
-                "Heredia","Heredia","40192","Costa Rica","demilio12@hotmail.com","506","87101280","Programador","12/10/2020");
+                "Heredia","Heredia","40192","Japan","demilio12@hotmail.com","506","87101280","Scrum Master","12/10/2020");
         this.forms.add(f);
         f = new Form("dsfs","sdfsdf","San sdf","sdfsd",
-                "sdfsd","erger","87298","Costa Rica","demilio12@hotmail.com","506","87101280","Programador","12/10/2020");
+                "sdfsd","erger","87298","Costa Rica","demilio12@hotmail.com","506","88720880","Developer","12/10/2020");
         this.forms.add(f);
             f = new Form("Dieqsfqrgo","srgfergfv","weefef Pablo","Quintana",
-                "Heredia","Heredia","40192","Costa Rica","demilio12@hotmail.com","506","87101280","Programador","12/10/2020");
+                "Heredia","Heredia","40192","Costa Rica","demilio12@hotmail.com","506","815858280","Human Resources","12/10/2020");
         this.forms.add(f);
     }
 
@@ -56,5 +56,9 @@ public class Datos implements Serializable {
 
     public void setForms(List<Form> forms) {
         this.forms = forms;
+    }
+
+    public void add(Form f){
+        this.forms.add(f);
     }
 }
