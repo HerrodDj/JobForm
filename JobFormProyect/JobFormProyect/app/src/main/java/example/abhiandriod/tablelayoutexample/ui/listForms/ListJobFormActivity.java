@@ -40,6 +40,7 @@ public class ListJobFormActivity extends AppCompatActivity implements ListJobFor
     private CoordinatorLayout coordinatorLayout;
     private SearchView searchView;
     private static int ft=1;
+    static int rolNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

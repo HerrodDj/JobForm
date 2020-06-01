@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JobFormProyect.iml" filepath="$PROJECT_DIR$/JobFormProyect.iml" group="JobFormProyect" />
+      <module fileurl="file://$PROJECT_DIR$/JobFormProyect-JobFormProyect.iml" filepath="$PROJECT_DIR$/JobFormProyect-JobFormProyect.iml" group="JobFormProyect" />
+      <module fileurl="file://$PROJECT_DIR$/app/JobFormProyect-app.iml" filepath="$PROJECT_DIR$/app/JobFormProyect-app.iml" group="JobFormProyect/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="JobFormProyect/app" />
     </modules>
   </component>

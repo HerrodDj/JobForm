@@ -24,7 +24,7 @@ public class ListJobFormAdapter extends RecyclerView.Adapter<ListJobFormAdapter.
     private Form deletedItem;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title1, title2, description;
+        public TextView title1, title2, description, description2;
         //two layers
         public RelativeLayout viewForeground, viewBackgroundDelete, viewBackgroundEdit;
 
@@ -33,6 +33,7 @@ public class ListJobFormAdapter extends RecyclerView.Adapter<ListJobFormAdapter.
             title1 = view.findViewById(R.id.titleFirstLbl);
             title2 = view.findViewById(R.id.titleSecLbl);
             description = view.findViewById(R.id.descriptionLbl);
+            description2 = view.findViewById(R.id.descriptionLb2);
             viewBackgroundDelete = view.findViewById(R.id.view_background_delete);
             viewBackgroundEdit = view.findViewById(R.id.view_background_edit);
             viewForeground = view.findViewById(R.id.view_foreground);
@@ -65,9 +66,10 @@ public class ListJobFormAdapter extends RecyclerView.Adapter<ListJobFormAdapter.
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         // basically a render
         final Form form = formListFiltered.get(position);
-        holder.title1.setText(form.getPhoneNumber());
+        holder.title1.setText(form.getName());
         holder.title2.setText(form.getLastName());
-        holder.description.setText(form.getName());
+        holder.description.setText(form.getPhoneNumber());
+        holder.description2.setText(form.getApplyingJob());
     }
 
     @Override
